@@ -1,0 +1,165 @@
+:root {
+    --background-color: #7ecbf8;
+    --text-color: #333;
+    --card-background: #f1e5da;
+    --button-background: #28a745;
+    --button-hover: #218838;
+    --filter-button-background: #007bff;
+    --filter-button-hover: #0056b3;
+    --task-border: #000000;
+    --task-shadow: rgb(255, 107, 211);
+    --completed-task-color: #6c757d;
+  }
+  
+  [data-theme="dark"] {
+    --background-color: #000000;
+    --text-color: #f5f5f5;
+    --card-background: #00000094;
+    --button-background: #34a853;
+    --button-hover: #2d9147;
+    --filter-button-background: #1a73e8;
+    --filter-button-hover: #1557b0;
+    --task-border: #444;
+    --task-shadow: rgba(255, 255, 255, 0.1);
+    --completed-task-color: #888;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, var(--background-color), #f8dbdb);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .container {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--task-shadow);
+    width: 400px;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+    color: var(--text-color);
+  }
+  
+  #darkModeToggle {
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #darkModeToggle:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input, select, button {
+    padding: 10px;
+    border: 1px solid var(--task-border);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  button {
+    background-color: var(--button-background);
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filters button {
+    flex: 1;
+    margin: 0 5px;
+    background-color: var(--filter-button-background);
+  }
+  
+  .filters button:hover {
+    background-color: var(--filter-button-hover);
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: var(--card-background);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px var(--task-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: var(--completed-task-color);
+  }
+  
+  li .task-info {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  li .task-info span {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-color);
+  }
+  
+  li .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  li .actions button {
+    background-color: transparent;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  
+  li .actions button:hover {
+    color: #c82333;
+  }
